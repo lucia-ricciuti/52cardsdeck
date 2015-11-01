@@ -32,6 +32,8 @@ public class CardDisplayerTest {
 	 */
 	@Test
 	public void testDisplay() {
+		logger.info("Testing display");
+		
 		Card card = new Card(Suit.HEARTS, 1);
 		
 		String display = displayer.display(card); 
@@ -47,6 +49,8 @@ public class CardDisplayerTest {
 	 */
 	@Test
 	public void testDisplayWithNumberGreaterThan10() {
+		logger.info("Testing display with number greater than 10");
+
 		Card card = new Card(Suit.HEARTS, 11);
 		
 		String display = displayer.display(card); 

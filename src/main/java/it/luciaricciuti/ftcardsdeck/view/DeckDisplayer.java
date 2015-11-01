@@ -28,7 +28,7 @@ public class DeckDisplayer implements Displayer<Deck> {
 		for (Card card : deck.getCardsList()) {
 			count++;
 			buffer.append(String.format("%6s", new CardDisplayer().display(card)));
-			if (count % 4 == 0) {
+			if (count % Deck.AMOUNT_FOR_SUIT == 0) {
 				buffer.append("\n");
 			}
 		}

@@ -31,6 +31,8 @@ public class DeckDisplayerTest {
 	 */
 	@Test
 	public void testDisplay() {
+		logger.info("Testing display");
+
 		Deck deck = new Deck();
 		
 		String display = displayer.display(deck); 

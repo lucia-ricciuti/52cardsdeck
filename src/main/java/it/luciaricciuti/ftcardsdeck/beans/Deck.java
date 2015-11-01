@@ -5,6 +5,7 @@ package it.luciaricciuti.ftcardsdeck.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,9 +61,14 @@ public class Deck {
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		
-		buffer.append("Deck is:");
-		// TODO Fix the + "\n"
-		cardsList.stream().forEach(card -> buffer.append(card+"\n"));
+		buffer.append("Deck is:\n");
+		cardsList.forEach(new Consumer<Card>() {
+		    @Override
+		    public void accept(Card card) {
+		        buffer.append(card);
+		        buffer.append("\n");
+		    }
+		});
 		
 		return buffer.toString();
 	}

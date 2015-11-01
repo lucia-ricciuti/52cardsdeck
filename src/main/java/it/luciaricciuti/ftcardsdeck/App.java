@@ -53,7 +53,7 @@ public class App
     	
     	// Showing extracted cards
     	logger.info("Here are the extracted cards:\n");
-    	cardsWithHearts.stream().forEach(card -> logger.info(cardDisplayer.display(card)));
+    	cardsWithHearts.forEach(card -> logger.info(cardDisplayer.display(card)));
     	
     	// 3. Ordering the deck
     	logger.info("Ordering the deck ...");

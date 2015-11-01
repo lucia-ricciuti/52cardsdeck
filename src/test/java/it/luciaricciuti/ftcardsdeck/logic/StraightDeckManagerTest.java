@@ -58,7 +58,7 @@ public class StraightDeckManagerTest {
 
 		List<Card> extractedCards = manager.extractCards(deck, suit);
 		
-		extractedCards.stream().forEach(card -> logger.info(card.toString()));
+		extractedCards.forEach(card -> logger.info(card.toString()));
 
 		Assert.assertEquals(Deck.AMOUNT_FOR_SUIT, extractedCards.size());
 	}
