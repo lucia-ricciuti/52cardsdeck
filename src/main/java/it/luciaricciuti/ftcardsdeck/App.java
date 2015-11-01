@@ -5,6 +5,7 @@ import java.util.List;
 import it.luciaricciuti.ftcardsdeck.beans.Card;
 import it.luciaricciuti.ftcardsdeck.beans.Deck;
 import it.luciaricciuti.ftcardsdeck.beans.Suit;
+import it.luciaricciuti.ftcardsdeck.logic.CustomDeckManager;
 import it.luciaricciuti.ftcardsdeck.logic.DeckManager;
 import it.luciaricciuti.ftcardsdeck.logic.StraightDeckManager;
 import it.luciaricciuti.ftcardsdeck.view.CardDisplayer;
@@ -54,9 +55,24 @@ public class App
     	logger.info("Here are the extracted cards:\n");
     	cardsWithHearts.stream().forEach(card -> logger.info(cardDisplayer.display(card)));
     	
-    	// Ordering the deck
+    	// 3. Ordering the deck
     	logger.info("Ordering the deck ...");
     	manager.order(deck);
+    	
+    	// Showing the ordered deck
+    	logger.info("Here is the ordered deck. \n" + deckDisplayer.display(deck));
+
+    	// Instantiating a custom manager
+    	CustomDeckManager customManager = new CustomDeckManager();
+    	
+    	// Shuffling again the deck
+    	logger.info("Shuffling deck again ....");
+    	customManager.shuffle(deck);
+    	logger.info("Here is the newly shuffled deck. \n" + deckDisplayer.display(deck));
+
+    	// Ordering deck with custom manager
+    	logger.info("Ordering the deck with custom manager ...");
+    	customManager.order(deck);
     	
     	// Showing the ordered deck
     	logger.info("Here is the ordered deck. \n" + deckDisplayer.display(deck));

@@ -4,6 +4,7 @@
 package it.luciaricciuti.ftcardsdeck.beans;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +13,11 @@ import org.slf4j.LoggerFactory;
  * Class that represents the deck of 52 cards.
  * @author Lucia Riccuti
  */
-public class Deck extends ArrayList<Card> {
-
-	private static final long serialVersionUID = -3978405490286073001L;
+public class Deck {
 
 	private static Logger logger = LoggerFactory.getLogger(Deck.class);
+	
+	private List<Card> cardsList;
 
 	/**
 	 * It's the amount of cards for every suit.
@@ -29,16 +30,22 @@ public class Deck extends ArrayList<Card> {
 	public Deck() {
 		generate();
 	}
+	
+	public Deck(List<Card> cardsList) {
+		super();
+		this.cardsList = cardsList;
+	}
 
 	/**
 	 * Fill the deck with the cards.
 	 */
 	private void generate() {
 		try {
+			cardsList = new ArrayList<Card>();
 			for (Suit suit: Suit.values()) {
 				for (int number=1; number <= AMOUNT_FOR_SUIT; number++) {
 					Card card = new Card(suit, number);
-					this.add(card);
+					cardsList.add(card);
 				}
 			}
 		} catch (Exception e) {
@@ -54,9 +61,19 @@ public class Deck extends ArrayList<Card> {
 		StringBuffer buffer = new StringBuffer();
 		
 		buffer.append("Deck is:");
-		this.stream().forEach(card -> buffer.append(card));
+		// TODO Fix the + "\n"
+		cardsList.stream().forEach(card -> buffer.append(card+"\n"));
 		
 		return buffer.toString();
 	}
 
+	public List<Card> getCardsList() {
+		return cardsList;
+	}
+
+	public void setCardsList(List<Card> cardsList) {
+		this.cardsList = cardsList;
+	}
+
+	
 }

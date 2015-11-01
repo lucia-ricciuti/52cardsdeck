@@ -25,7 +25,7 @@ public class DeckDisplayer implements Displayer<Deck> {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Deck is:\n");
 		int count = 0;
-		for (Card card : deck) {
+		for (Card card : deck.getCardsList()) {
 			count++;
 			buffer.append(String.format("%6s", new CardDisplayer().display(card)));
 			if (count % 4 == 0) {

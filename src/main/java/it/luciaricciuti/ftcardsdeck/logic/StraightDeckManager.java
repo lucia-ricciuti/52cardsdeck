@@ -19,14 +19,15 @@ public class StraightDeckManager implements DeckManager {
 	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#shuffle(it.luciaricciuti.cardsdeck.beans.Deck)
 	 */
 	public void shuffle(Deck deck) {
-		Collections.shuffle(deck, new Random(System.currentTimeMillis()));
+		Collections.shuffle(deck.getCardsList(), new Random(System.currentTimeMillis()));
 	}
 
 	/* (non-Javadoc)
 	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#extractCards(it.luciaricciuti.cardsdeck.beans.Deck, it.luciaricciuti.cardsdeck.beans.Suit)
 	 */
 	public List<Card> extractCards(Deck deck, Suit suit) {
-		return deck.stream()
+		return deck.getCardsList()
+			.stream()
 			.filter(c -> c.getSuit().equals(suit))
 			.collect(Collectors.toList())
 		;
@@ -36,7 +37,7 @@ public class StraightDeckManager implements DeckManager {
 	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#ordedr(it.luciaricciuti.cardsdeck.beans.Deck)
 	 */
 	public void order(Deck deck) {
-		deck.sort((c1, c2) -> c1.compareTo(c2));
+		deck.getCardsList().sort((c1, c2) -> c1.compareTo(c2));
 	}
 
 

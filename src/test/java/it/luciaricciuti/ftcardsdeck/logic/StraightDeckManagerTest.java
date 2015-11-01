@@ -41,8 +41,8 @@ public class StraightDeckManagerTest {
 		logger.info("Testing shuffle");
 
 		manager.shuffle(deck);
-		
-		deck.stream().forEach(card -> logger.info(card.toString()));
+
+		logger.info(deck.toString());
 
 		Assert.assertTrue(true);
 	}
@@ -74,7 +74,7 @@ public class StraightDeckManagerTest {
 		
 		manager.order(deck);
 		
-		deck.stream().forEach(card -> logger.info(card.toString()));
+		logger.info(deck.toString());
 		
 		Assert.assertTrue(true);
 	}
