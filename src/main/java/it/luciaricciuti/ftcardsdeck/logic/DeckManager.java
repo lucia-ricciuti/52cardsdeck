@@ -1,13 +1,13 @@
 /**
  * 
  */
-package it.luciaricciuti.cardsdeck.logic;
+package it.luciaricciuti.ftcardsdeck.logic;
 
 import java.util.List;
 
-import it.luciaricciuti.cardsdeck.beans.Card;
-import it.luciaricciuti.cardsdeck.beans.Deck;
-import it.luciaricciuti.cardsdeck.beans.Suit;
+import it.luciaricciuti.ftcardsdeck.beans.Card;
+import it.luciaricciuti.ftcardsdeck.beans.Deck;
+import it.luciaricciuti.ftcardsdeck.beans.Suit;
 
 /**
  * Interface for the manager of decks.
@@ -31,7 +31,7 @@ public interface DeckManager {
 	List<Card> extractCards(Deck deck, Suit suit);
 	
 	/**
-	 * Orders a shuffled deck.
+	 * Orders a deck.
 	 * @param deck
 	 */
 	void order(Deck deck);

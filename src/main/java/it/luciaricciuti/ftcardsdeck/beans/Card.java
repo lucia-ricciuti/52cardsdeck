@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.luciaricciuti.cardsdeck.beans;
+package it.luciaricciuti.ftcardsdeck.beans;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.luciaricciuti.cardsdeck.view;
+package it.luciaricciuti.ftcardsdeck.view;
 
 /**
  * Interface for the classes that renders an object.
@@ -9,6 +9,11 @@ package it.luciaricciuti.cardsdeck.view;
  */
 public interface Displayer<T> {
 	
+	/**
+	 * Renders the element.
+	 * @param element
+	 * @return a String that is the representation of the element
+	 */
 	String display(T element);
 
 }

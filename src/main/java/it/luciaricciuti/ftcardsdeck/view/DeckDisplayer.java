@@ -1,10 +1,10 @@
 /**
  * 
  */
-package it.luciaricciuti.cardsdeck.view;
+package it.luciaricciuti.ftcardsdeck.view;
 
-import it.luciaricciuti.cardsdeck.beans.Card;
-import it.luciaricciuti.cardsdeck.beans.Deck;
+import it.luciaricciuti.ftcardsdeck.beans.Card;
+import it.luciaricciuti.ftcardsdeck.beans.Deck;
 
 /**
  * Class that does the rendering of a Deck.
@@ -25,7 +25,7 @@ public class DeckDisplayer implements Displayer<Deck> {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Deck is:\n");
 		int count = 0;
-		for (Card card : deck.getListOfCards()) {
+		for (Card card : deck) {
 			count++;
 			buffer.append(String.format("%6s", new CardDisplayer().display(card)));
 			if (count % 4 == 0) {
@@ -35,5 +35,5 @@ public class DeckDisplayer implements Displayer<Deck> {
 		
 		return buffer.toString();
 	}
-	
+
 }

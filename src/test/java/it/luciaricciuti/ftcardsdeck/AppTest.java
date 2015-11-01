@@ -1,7 +1,9 @@
 /**
  * 
  */
-package it.luciaricciuti.cardsdeck;
+package it.luciaricciuti.ftcardsdeck;
+
+import it.luciaricciuti.ftcardsdeck.App;
 
 import org.junit.Test;
 

@@ -1,8 +1,8 @@
-package it.luciaricciuti.cardsdeck.logic;
+package it.luciaricciuti.ftcardsdeck.logic;
 
-import it.luciaricciuti.cardsdeck.beans.Card;
-import it.luciaricciuti.cardsdeck.beans.Deck;
-import it.luciaricciuti.cardsdeck.beans.Suit;
+import it.luciaricciuti.ftcardsdeck.beans.Card;
+import it.luciaricciuti.ftcardsdeck.beans.Deck;
+import it.luciaricciuti.ftcardsdeck.beans.Suit;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,27 +19,24 @@ public class StraightDeckManager implements DeckManager {
 	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#shuffle(it.luciaricciuti.cardsdeck.beans.Deck)
 	 */
 	public void shuffle(Deck deck) {
-		List<Card> cardsList = deck.getListOfCards();
-		Collections.shuffle(cardsList, new Random(System.currentTimeMillis()));
+		Collections.shuffle(deck, new Random(System.currentTimeMillis()));
 	}
 
 	/* (non-Javadoc)
 	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#extractCards(it.luciaricciuti.cardsdeck.beans.Deck, it.luciaricciuti.cardsdeck.beans.Suit)
 	 */
 	public List<Card> extractCards(Deck deck, Suit suit) {
-		return deck.getListOfCards()
-			.stream()
+		return deck.stream()
 			.filter(c -> c.getSuit().equals(suit))
 			.collect(Collectors.toList())
 		;
 	}
 
 	/* (non-Javadoc)
-	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#order(it.luciaricciuti.cardsdeck.beans.Deck)
+	 * @see it.luciaricciuti.cardsdeck.logic.DeckManager#ordedr(it.luciaricciuti.cardsdeck.beans.Deck)
 	 */
 	public void order(Deck deck) {
-		// TODO Auto-generated method stub
-		
+		deck.sort((c1, c2) -> c1.compareTo(c2));
 	}
 
 
