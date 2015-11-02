@@ -40,7 +40,7 @@ public class CardDisplayerTest {
 		
 		logger.info(display);
 		
-		Assert.assertNull(display);
+		Assert.assertNotNull(display);
 	}
 
 	/**
@@ -57,6 +57,6 @@ public class CardDisplayerTest {
 		
 		logger.info(display);
 		
-		Assert.assertNull(display);
+		Assert.assertNotNull(display);
 	}
 }

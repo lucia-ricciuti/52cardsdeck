@@ -39,7 +39,7 @@ public class DeckDisplayerTest {
 		
 		logger.info(display);
 		
-		Assert.assertNull(display);
+		Assert.assertNotNull(display);
 	}
 
 }
