@@ -11,7 +11,10 @@
 	<url>https://github.com/lucia-ricciuti/52cardsdeck</url>
 
 	<properties>
-	  <jdk.version>1.8</jdk.version>
+		<jdk.version>1.8</jdk.version>
+		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -33,6 +36,7 @@
 		    <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>${maven-compiler-plugin.version}</version>
 		        <configuration>
 		            <source>${jdk.version}</source>
 		            <target>${jdk.version}</target>
@@ -41,6 +45,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
 				<configuration>
 				  <archive>
 					<manifest>
