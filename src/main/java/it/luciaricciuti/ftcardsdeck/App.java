@@ -56,12 +56,12 @@ public class App
         	logger.info("Here are the extracted cards:\n");
         	cardsWithHearts.forEach(card -> logger.info(cardDisplayer.display(card)));
         	
-        	// 3. Ordering the deck
-        	logger.info("Ordering the deck ...");
+        	// 3. Sorting deck
+        	logger.info("Sorting the deck ...");
         	manager.order(deck);
         	
-        	// Showing the ordered deck
-        	logger.info("Here is the ordered deck. \n" + deckDisplayer.display(deck));
+        	// Showing the sorted deck
+        	logger.info("Here is the sorted deck. \n" + deckDisplayer.display(deck));
 
         	// Instantiating a custom manager
         	CustomDeckManager customManager = new CustomDeckManager();
@@ -71,12 +71,12 @@ public class App
         	customManager.shuffle(deck);
         	logger.info("Here is the newly shuffled deck. \n" + deckDisplayer.display(deck));
 
-        	// Ordering deck with custom manager
-        	logger.info("Ordering the deck with custom manager ...");
+        	// Sorting deck with custom manager
+        	logger.info("Sorting the deck with custom manager ...");
         	customManager.order(deck);
         	
-        	// Showing the ordered deck
-        	logger.info("Here is the ordered deck. \n" + deckDisplayer.display(deck));
+        	// Showing the sorted deck
+        	logger.info("Here is the sorted deck. \n" + deckDisplayer.display(deck));
 
         	logger.info("App finished ....");
 		} 
