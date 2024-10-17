@@ -8,22 +8,22 @@ import it.luciaricciuti.ftcardsdeck.beans.Card;
 import it.luciaricciuti.ftcardsdeck.beans.Deck;
 
 /**
- * Manager of decks with custom implementation of ordering method.
+ * Manager of decks with custom implementation of sorting method.
  * @author Lucia Riccuti
  */
 public class CustomDeckManager extends StraightDeckManager{
 
 	/* (non-Javadoc)
-	 * @see it.luciaricciuti.ftcardsdeck.logic.StraightDeckManager#order(it.luciaricciuti.ftcardsdeck.beans.Deck)
+	 * @see it.luciaricciuti.ftcardsdeck.logic.StraightDeckManager#sort(it.luciaricciuti.ftcardsdeck.beans.Deck)
 	 */
 	@Override
-	public void order(Deck deck) {
-		// Ordering cards list ...
+	public void sort(Deck deck) {
+		// Sorting cards list ...
 		List<Card> sortedCardsList = 
-			recursiveQuickSort(deck.getCardsList());
+			recursiveQuickSort(deck.getCardList());
 		
 		// ... and setting it to deck.
-		deck.setCardsList(sortedCardsList);
+		deck.setCardList(sortedCardsList);
 	}
 
 	/**
@@ -61,8 +61,8 @@ public class CustomDeckManager extends StraightDeckManager{
 		;
 
 		// Applying same method to sub lists
-		// and combining the ordered sub lists with pivot
-		List<Card> sortedCardsList = new ArrayList<Card>();
+		// and combining the sorted sub lists with pivot
+		List<Card> sortedCardsList = new ArrayList<>();
 		sortedCardsList.addAll(recursiveQuickSort(leftSubCardsList));
 		sortedCardsList.add(pivot);
 		sortedCardsList.addAll(recursiveQuickSort(rightSubCardsList));

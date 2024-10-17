@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import it.luciaricciuti.ftcardsdeck.beans.Card;
 import it.luciaricciuti.ftcardsdeck.beans.Deck;
 import it.luciaricciuti.ftcardsdeck.beans.Suit;
-import it.luciaricciuti.ftcardsdeck.logic.StraightDeckManager;
 
 /**
  * Test class for {@link StraightDeckManager}
@@ -64,7 +63,7 @@ public class StraightDeckManagerTest {
 	}
 	
 	/**
-	 * Tests {@link StraightDeckManager#order(Deck)}
+	 * Tests {@link StraightDeckManager#sort(Deck)}
 	 */
 	@Test
 	public void testOrder() {
@@ -72,7 +71,7 @@ public class StraightDeckManagerTest {
 
 		manager.shuffle(deck);
 		
-		manager.order(deck);
+		manager.sort(deck);
 		
 		logger.info(deck.toString());
 		

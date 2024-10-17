@@ -29,7 +29,7 @@ public class CustomDeckManagerTest {
 	}
 	
 	/**
-	 * Tests {@link CustomDeckManager#order(Deck)}
+	 * Tests {@link CustomDeckManager#sort(Deck)}
 	 */
 	@Test
 	public void testOrder() {
@@ -37,7 +37,7 @@ public class CustomDeckManagerTest {
 
 		manager.shuffle(deck);
 		
-		manager.order(deck);
+		manager.sort(deck);
 		
 		logger.info(deck.toString());
 		

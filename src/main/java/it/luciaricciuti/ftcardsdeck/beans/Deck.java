@@ -5,7 +5,6 @@ package it.luciaricciuti.ftcardsdeck.beans;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +17,7 @@ public class Deck {
 
 	private static Logger logger = LoggerFactory.getLogger(Deck.class);
 	
-	private List<Card> cardsList;
+	private List<Card> cardList;
 
 	/**
 	 * It's the amount of cards for every suit.
@@ -32,9 +31,9 @@ public class Deck {
 		generate();
 	}
 	
-	public Deck(List<Card> cardsList) {
+	public Deck(List<Card> cardList) {
 		super();
-		this.cardsList = cardsList;
+		this.cardList = cardList;
 	}
 
 	/**
@@ -42,11 +41,11 @@ public class Deck {
 	 */
 	private void generate() {
 		try {
-			cardsList = new ArrayList<Card>();
+			cardList = new ArrayList<Card>();
 			for (Suit suit: Suit.values()) {
 				for (int number=1; number <= AMOUNT_FOR_SUIT; number++) {
 					Card card = new Card(suit, number);
-					cardsList.add(card);
+					cardList.add(card);
 				}
 			}
 		} catch (Exception e) {
@@ -62,23 +61,20 @@ public class Deck {
 		StringBuffer buffer = new StringBuffer();
 		
 		buffer.append("Deck is:\n");
-		cardsList.forEach(new Consumer<Card>() {
-		    @Override
-		    public void accept(Card card) {
-		        buffer.append(card);
-		        buffer.append("\n");
-		    }
-		});
+		cardList.forEach(card -> {
+            buffer.append(card);
+            buffer.append("\n");
+        });
 		
 		return buffer.toString();
 	}
 
-	public List<Card> getCardsList() {
-		return cardsList;
+	public List<Card> getCardList() {
+		return cardList;
 	}
 
-	public void setCardsList(List<Card> cardsList) {
-		this.cardsList = cardsList;
+	public void setCardList(List<Card> cardList) {
+		this.cardList = cardList;
 	}
 
 	

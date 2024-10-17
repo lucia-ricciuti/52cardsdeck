@@ -31,10 +31,10 @@ public interface DeckManager {
 	List<Card> extractCards(Deck deck, Suit suit);
 	
 	/**
-	 * Orders a deck.
+	 * Sorting a deck.
 	 * @param deck
 	 */
-	void order(Deck deck);
+	void sort(Deck deck);
 	
 	
 }

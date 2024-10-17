@@ -58,7 +58,7 @@ public class App
         	
         	// 3. Sorting deck
         	logger.info("Sorting the deck ...");
-        	manager.order(deck);
+        	manager.sort(deck);
         	
         	// Showing the sorted deck
         	logger.info("Here is the sorted deck. \n" + deckDisplayer.display(deck));
@@ -73,7 +73,7 @@ public class App
 
         	// Sorting deck with custom manager
         	logger.info("Sorting the deck with custom manager ...");
-        	customManager.order(deck);
+        	customManager.sort(deck);
         	
         	// Showing the sorted deck
         	logger.info("Here is the sorted deck. \n" + deckDisplayer.display(deck));
