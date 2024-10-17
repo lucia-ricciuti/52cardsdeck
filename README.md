@@ -1,8 +1,8 @@
 # Deck of Cards Application
-This application models a standard 52-card deck and includes several key features:
+This application models a standard 52-card deck and includes several key features.
 
-- **Shuffle Method**: implements a method to shuffle the deck, ensuring random order of the cards;
-- **Filter by Suit**: retrieves all cards of a specific suit from the shuffled deck;
+- **Shuffle Method**: implements a method to shuffle the deck, ensuring random order of the cards.
+- **Filter by Suit**: retrieves all cards of a specific suit from the shuffled deck.
 - **Ordered Deck**: provides functionality to reorder a shuffled deck by suit and rank, following this order:
   - Diamonds (Ace to King)
   - Clubs (Ace to King)
